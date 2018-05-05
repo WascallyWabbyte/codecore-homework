@@ -1,0 +1,11 @@
+<%- include('./partials/header') %>
+    <form action="/results" method="post">
+      <% for(let i = 0; i < quiz.questions.length; i += 1) { %>
+        <p><%= quiz.questions[i].question %></p>
+          <% for(let j = 0; j < quiz.questions[i].choices.length; j += 1) { %>
+            <div class="radio"><input type="radio" name="answer<%= i %>" value="<%= j %>"><%= quiz.questions[i].choices[j] %></div>
+          <% } %>
+        <% } %>
+        <input type="submit" value="Submit">
+    </form>
+<%- include('./partials/footer') %>
