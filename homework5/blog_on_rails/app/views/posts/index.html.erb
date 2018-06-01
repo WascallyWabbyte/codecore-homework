@@ -1,0 +1,29 @@
+<h1>Hello, welcome to Blog on Rails!</h1>
+
+<ul class="list-inline">
+  <% @posts.each do |post| %>
+  <li class="list-inline-item">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to post.title, post_path(post) %></h5>
+        <p class="card-text"><%= post.body %></p>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+
+<!-- <div class="container">
+  <% @posts.each do |post| %>
+    <div class="rows">
+      <div class="col-lg-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to post.title, post_path(post) %></h5>
+            <p class="card-text"><%= post.body %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div> -->
